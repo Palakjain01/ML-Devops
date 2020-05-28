@@ -22,10 +22,10 @@ def read_idx(filename):
 # In[5]:
 
 
-x_train = read_idx("./fashion_mnist/train-images-idx3-ubyte")
-y_train = read_idx("./fashion_mnist/train-labels-idx1-ubyte")
-x_test = read_idx("./fashion_mnist/t10k-images-idx3-ubyte")
-y_test = read_idx("./fashion_mnist/t10k-labels-idx1-ubyte")
+x_train = read_idx("/mnt/fashion_mnist/train-images-idx3-ubyte")
+y_train = read_idx("/mnt/fashion_mnist/train-labels-idx1-ubyte")
+x_test = read_idx("/mnt/fashion_mnist/t10k-images-idx3-ubyte")
+y_test = read_idx("/mnt/fashion_mnist/t10k-labels-idx1-ubyte")
 
 
 # ### Let's inspect our dataset
