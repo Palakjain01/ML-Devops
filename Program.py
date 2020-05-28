@@ -216,12 +216,10 @@ print(f"accuracy {accuracy}%")
 from os import system
 
 if accuracy > 90:
-    system("echo True accuracy={}% > Accuracy.txt".format(accuracy))
-    #system("echo 'True' > /Accuracy.txt")  # for linux
+    os.system("echo 'True' accuracy={}% > /mnt/Accuracy.txt".format(accuracy))
+    
 else:
-    system("echo False accuracy={}% > Accuracy.txt".format(accuracy))
-    #system("echo 'False' > /Accuracy.txt")
-
+    os.system("echo 'False' accuracy={}% > /mnt/Accuracy.txt".format(accuracy))
 
 # In[ ]:
 
