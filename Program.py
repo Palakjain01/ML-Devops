@@ -213,7 +213,7 @@ print(f"accuracy {accuracy}%")
 
 #Printing accuracy into a separate file
 
-from os import system
+import os
 
 if accuracy > 90:
     os.system("echo 'True' accuracy={}% > /mnt/Accuracy.txt".format(accuracy))
