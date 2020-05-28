@@ -239,8 +239,7 @@ for l in f2:
 
 
 
-
-"""
+'''
 # Code to send email
 
 import smtplib, ssl
@@ -324,7 +323,7 @@ for i in range(0,10):
     cv2.waitKey(0)
 
 cv2.destroyAllWindows()
-"""
+'''
 
 
 
