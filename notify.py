@@ -1,10 +1,17 @@
-file=open("/mlopsdata/Accuracy.txt", "r")
+''''file=open("/mlopsdata/Accuracy.txt", "r")
 x1=file.readline()
 for line in x1:
     for i in line:
         if i.isdigit()== True:
             accuracy=float(i)
-            
+'''
+
+f=open("input.txt","r")
+y=[]
+file=f.readlines()
+for line in file:
+    y.append(int(line.strip()))
+f.close()
 print("accurcacy for your model:",accuracy)
 
 
