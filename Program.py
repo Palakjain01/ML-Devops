@@ -216,10 +216,10 @@ print(f"accuracy {accuracy}%")
 import os
 
 if accuracy > 90:
-    os.system("echo 'True' \naccuracy={}% > /mnt/Accuracy.txt".format(accuracy))
+    os.system("echo {} > /mnt/Accuracy.txt".format(accuracy))
     
 else:
-    os.system("echo 'False' \naccuracy={}% > /mnt/Accuracy.txt".format(accuracy))
+    os.system("echo {} > /mnt/Accuracy.txt".format(accuracy))
 
 
 """f1=open("Accuracy.txt" , "r")
