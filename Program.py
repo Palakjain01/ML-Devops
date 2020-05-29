@@ -193,7 +193,7 @@ print(f"accuracy {accuracy}%")
 
 
 #Printing accuracy into a separate file
-f=open("Accuracy.txt" , "w")
+f=open("/mnt/Accuracy.txt" , "w")
 f.write("{}".format(accuracy))
 f.close()
 
