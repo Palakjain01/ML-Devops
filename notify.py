@@ -15,7 +15,7 @@ smtp_server ="smtp.gmail.com"
 sender_email="iampalakjain01@gmail.com"    #Sender's Mail Address
 receiver_email="itspalak19@gmail.com"      #Receiver's Mail Address
 password="xecbeupbulzfwpos"
-if accuracy > "95":
+if accuracy > "90":
     message="""    Subject: Report | Prediction Program
     
     CONGRATULATIONS! 
