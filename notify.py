@@ -1,3 +1,11 @@
+file=open("Accuracy.txt", "r")
+x1=file1.readline()
+for line in x1:
+    for i in line:
+        if i.isdogit()== True:
+            accuracy=float(i)
+
+
 
 import smtplib, ssl
 
