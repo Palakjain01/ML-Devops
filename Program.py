@@ -2,10 +2,6 @@
 # coding: utf-8
 
 # ### Fashion MNIST
-
-# In[4]:
-
-
 import struct
 import numpy as np
 
@@ -19,9 +15,6 @@ def read_idx(filename):
 
 # ### We use the function to extact our training and test datasets
 
-# In[5]:
-
-
 x_train = read_idx("/mnt/fashion_mnist/train-images-idx3-ubyte")
 y_train = read_idx("/mnt/fashion_mnist/train-labels-idx1-ubyte")
 x_test = read_idx("/mnt/fashion_mnist/t10k-images-idx3-ubyte")
@@ -29,9 +22,6 @@ y_test = read_idx("/mnt/fashion_mnist/t10k-labels-idx1-ubyte")
 
 
 # ### Let's inspect our dataset
-
-# In[6]:
-
 
 # printing the number of samples in x_train, x_test, y_train, y_test
 print("Initial shape or dimensions of x_train", str(x_train.shape))
@@ -47,8 +37,6 @@ print()
 print ("Dimensions of x_test:" + str(x_test[0].shape))
 print ("Labels in y_test:" + str(y_test.shape))
 
-
-# In[7]:
 
 
 from keras.datasets import mnist
@@ -99,7 +87,7 @@ print ("Number of Classes: " + str(y_test.shape[1]))
 num_classes = y_test.shape[1]
 num_pixels = x_train.shape[1] * x_train.shape[2]
 
-# create MODEL ARCHITECTURE
+# create MODEL / ARCHITECTURE
 
 import numpy as np
 import hyper_parameters1 as hp
@@ -200,38 +188,25 @@ score = model.evaluate(x_test, y_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 
-
-# In[ ]:
-
-
 accuracy=float(score[1]*100)
 print(f"accuracy {accuracy}%")
 
 
+#Printing accuracy into a separate file
+f=open("Accuracy.txt" , "w")
+f.write("{}".format(accuracy))
+f.close()
+
+
 # In[ ]:
 
 
-#Printing accuracy into a separate file
 
+'''
 import os
-
 if accuracy > 90:
     os.system("echo {} > /mnt/Accuracy.txt".format(accuracy))
     
 else:
     os.system("echo {} > /mnt/Accuracy.txt".format(accuracy))
-
-
-"""f1=open("Accuracy.txt" , "r")
-x1=f1.readline()
-ac=float(x1)
-
-f2=open()"input.txt","r")
-a=[]
-file=f2.readlines()
-for l in f2:
-    
-"""
-
-
-
+'''
