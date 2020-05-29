@@ -1,10 +1,11 @@
-file=open("/mnt/Accuracy.txt", "r")
-x1=file1.readline()
+file=open("/mlopsdata/Accuracy.txt", "r")
+x1=file.readline()
 for line in x1:
     for i in line:
-        if i.isdogit()== True:
+        if i.isdigit()== True:
             accuracy=float(i)
-
+            
+print("accurcacy for your model:",accuracy)
 
 
 import smtplib, ssl
