@@ -1,16 +1,9 @@
-''''file=open("/mlopsdata/Accuracy.txt", "r")
-x1=file.readline()
-for line in x1:
-    for i in line:
-        if i.isdigit()== True:
-            accuracy=float(i)
-'''
-
-f=open("input.txt","r")
+f=open("/mlopsdata/Accuracy.txt","r")
 y=[]
 file=f.readlines()
 for line in file:
-    y.append(int(line.strip()))
+    y.append(float(line.strip()))
+accuracy=str(y[0])
 f.close()
 print("accurcacy for your model:",accuracy)
 
@@ -22,11 +15,11 @@ smtp_server ="smtp.gmail.com"
 sender_email="iampalakjain01@gmail.com"    #Sender's Mail Address
 receiver_email="itspalak19@gmail.com"      #Receiver's Mail Address
 password="xecbeupbulzfwpos"
-if accuracy > 90:
+if accuracy > "95":
     message="""    Subject: Report | Prediction Program
     
     CONGRATULATIONS! 
-    Your code achieved{}% accuracy.""".format(accuracy)
+    Your code achieved {}% accuracy.""".format(accuracy)
 else:
     message="""    Subject: Report | Prediction Program
     
