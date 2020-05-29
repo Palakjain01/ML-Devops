@@ -216,12 +216,10 @@ print(f"accuracy {accuracy}%")
 import os
 
 if accuracy > 90:
-    os.system("echo 'True' accuracy={}% > /mnt/Accuracy.txt".format(accuracy))
+    os.system("echo 'True' \naccuracy={}% > /mnt/Accuracy.txt".format(accuracy))
     
 else:
-    os.system("echo 'False' accuracy={}% > /mnt/Accuracy.txt".format(accuracy))
-
-# In[ ]:
+    os.system("echo 'False' \naccuracy={}% > /mnt/Accuracy.txt".format(accuracy))
 
 
 """f1=open("Accuracy.txt" , "r")
@@ -234,94 +232,6 @@ file=f2.readlines()
 for l in f2:
     
 """
-
-
-
-'''
-# Code to send email
-
-import smtplib, ssl
-
-port = 465 #For SSL
-smtp_server ="smtp.gmail.com"
-sender_email="iampalakjain01@gmail.com"    #Sender's Mail Address
-receiver_email="itspalak19@gmail.com"      #Receiver's Mail Address
-password="xecbeupbulzfwpos"
-if accuracy > 90:
-    message="""    Subject: Report | Prediction Program
-    
-    CONGRATULATIONS! 
-    Your code achieved{}% accuracy.""".format(accuracy)
-else:
-    message="""    Subject: Report | Prediction Program
-    
-    Train Again!
-    Your code got {}% accuracy.""".format(accuracy)
-    
-context=ssl.create_default_context()
-with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-    server.login(sender_email,password)
-    server.sendmail(sender_email, receiver_email, message)    
-
-
-# ### Let's test out our model
-
-# In[ ]:
-
-
-import cv2
-import numpy as np
-
-def getLabel(input_class):
-    number = int(input_class)
-    if number == 0:
-        return "T-shirt/top "
-    if number == 1:
-        return "Trouser"
-    if number == 2:
-        return "Pullover"
-    if number == 3:
-        return "Dress"
-    if number == 4:
-        return "Coat"
-    if number == 5:
-        return "Sandal"
-    if number == 6:
-        return "Shirt"
-    if number == 7:
-        return "Sneaker"
-    if number == 8:
-        return "Bag"
-    if number == 9:
-        return "Ankle boot"
-
-def draw_test(name, pred, actual, input_im):
-    BLACK = [0,0,0]
-
-    res = getLabel(pred)
-    actual = getLabel(actual)   
-    expanded_image = cv2.copyMakeBorder(input_im, 0, 0, 0, 4*imageL.shape[0] ,cv2.BORDER_CONSTANT,value=BLACK)
-    expanded_image = cv2.cvtColor(expanded_image, cv2.COLOR_GRAY2BGR)
-    cv2.putText(expanded_image, "Predicted - " + str(res), (152, 70) , cv2.FONT_HERSHEY_COMPLEX_SMALL,1, (0,255,0), 1)
-    cv2.putText(expanded_image, "   Actual - " + str(actual), (152, 90) , cv2.FONT_HERSHEY_COMPLEX_SMALL,1, (0,0,255), 1)
-    cv2.imshow(name, expanded_image)
-
-
-for i in range(0,10):
-    rand = np.random.randint(0,len(x_test))
-    input_im = x_test[rand]
-    actual = y_test[rand].argmax(axis=0)
-    imageL = cv2.resize(input_im, None, fx=4, fy=4, interpolation = cv2.INTER_CUBIC)
-    input_im = input_im.reshape(1,28,28,1) 
-    
-    ## Get Prediction
-    res = str(model.predict_classes(input_im, 1, verbose = 0)[0])
-
-    draw_test("Prediction", res, actual, imageL) 
-    cv2.waitKey(0)
-
-cv2.destroyAllWindows()
-'''
 
 
 
