@@ -1,4 +1,4 @@
-file=open("Accuracy.txt", "r")
+file=open("/mnt/Accuracy.txt", "r")
 x1=file1.readline()
 for line in x1:
     for i in line:
